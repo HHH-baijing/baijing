@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- 姓名：白静 | 学号：24001010327 | 时间：2026-11-19 | 大模型：DeepSeek-V4.1-Flash -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据库连接测试 · 知乎的模仿与制作</title>
+  <link rel="stylesheet" href="./css/baijing_main.css">
+</head>
+<body>
+  <canvas id="baijing_canvasBg" class="baijing_canvasBg"></canvas>
+
+  <div class="baijing_page">
+    <header class="baijing_header">
+      <div class="baijing_brand">
+        <span class="baijing_brandMark">知</span>
+        <div class="baijing_brandText">
+          <h1 class="baijing_brandTitle">知乎的模仿与制作</h1>
+          <p class="baijing_brandSub">全栈项目 · 模仿</p>
+        </div>
+      </div>
+      <div class="baijing_userCard">
+        <span class="baijing_userName">白静</span>
+        <span class="baijing_userId">24001010327</span>
+      </div>
+    </header>
+
+    <main class="baijing_main baijing_main--narrow">
+      <a class="baijing_backLink" href="./index.html">&larr; 返回首页</a>
+
+      <section class="baijing_formCard">
+        <h2 class="baijing_formTitle">数据库连接测试</h2>
+        <p class="baijing_formTip">当前使用 MySQL，输入用户名和密码后点击测试。默认账号 root / root。</p>
+
+        <form id="baijing_dbForm" class="baijing_form" autocomplete="off">
+          <div class="baijing_formRow">
+            <label class="baijing_label" for="baijing_username">用户名</label>
+            <input class="baijing_input" id="baijing_username" name="baijing_username" type="text" value="root" placeholder="请输入 MySQL 用户名">
+          </div>
+          <div class="baijing_formRow">
+            <label class="baijing_label" for="baijing_password">密码</label>
+            <input class="baijing_input" id="baijing_password" name="baijing_password" type="password" value="root" placeholder="请输入 MySQL 密码">
+          </div>
+          <button class="baijing_btn" id="baijing_submitBtn" type="submit">测试连接</button>
+        </form>
+
+        <div class="baijing_result" id="baijing_result" aria-live="polite"></div>
+
+        <p class="baijing_apiHint">接口：POST /api/db/test</p>
+      </section>
+    </main>
+
+    <footer class="baijing_footer">
+      <span>姓名：白静</span>
+      <span class="baijing_dot">·</span>
+      <span>学号：24001010327</span>
+      <span class="baijing_dot">·</span>
+      <span>知乎的模仿与制作</span>
+    </footer>
+  </div>
+
+  <script src="./js/baijing_database.js"></script>
+</body>
+</html>

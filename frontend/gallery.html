@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- 姓名：白静 | 学号：24001010327 | 时间：2026-11-19 | 大模型：DeepSeek-V4.1-Flash -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图文列表 · 知乎的模仿与制作</title>
+  <link rel="stylesheet" href="./css/baijing_main.css">
+  <link rel="stylesheet" href="./css/baijing_news.css">
+  <link rel="stylesheet" href="./css/baijing_gallery.css">
+</head>
+<body>
+  <canvas id="baijing_canvasBg" class="baijing_canvasBg"></canvas>
+
+  <div class="baijing_page">
+    <header class="baijing_header">
+      <div class="baijing_brand">
+        <span class="baijing_brandMark">知</span>
+        <div class="baijing_brandText">
+          <h1 class="baijing_brandTitle">知乎的模仿与制作</h1>
+          <p class="baijing_brandSub">全栈项目 · 模仿</p>
+        </div>
+      </div>
+      <div class="baijing_userCard">
+        <span class="baijing_userName">白静</span>
+        <span class="baijing_userId">24001010327</span>
+      </div>
+    </header>
+
+    <main class="baijing_main">
+      <a class="baijing_backLink" href="./index.html">&larr; 返回首页</a>
+
+      <section class="baijing_newsHead">
+        <h2 class="baijing_newsTitle">图文列表</h2>
+        <p class="baijing_newsDesc">数据存储于 MySQL 表 <code class="baijing_code">baijing_gallery</code>，图片为网络图片地址。</p>
+        <div class="baijing_apiBox">
+          <span class="baijing_apiLabel">后端接口</span>
+          <a class="baijing_apiLink" href="/api/gallery" target="_blank">GET /api/gallery</a>
+          <span class="baijing_apiCount" id="baijing_apiCount"></span>
+        </div>
+      </section>
+
+      <section class="baijing_galleryGrid" id="baijing_galleryGrid"></section>
+      <div class="baijing_result" id="baijing_result" aria-live="polite"></div>
+    </main>
+
+    <footer class="baijing_footer">
+      <span>姓名：白静</span>
+      <span class="baijing_dot">·</span>
+      <span>学号：24001010327</span>
+      <span class="baijing_dot">·</span>
+      <span>知乎的模仿与制作</span>
+    </footer>
+  </div>
+
+  <script src="./js/baijing_gallery.js"></script>
+</body>
+</html>

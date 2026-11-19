@@ -1,0 +1,126 @@
+/**
+ * 姓名：白静 | 学号：24001010327 | 时间：2026-11-19 | 大模型：DeepSeek-V4.1-Flash
+ * 功能：科技新闻列表页样式
+ */
+
+.baijing_newsHead {
+  margin-bottom: 28px;
+}
+
+.baijing_newsTitle {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.baijing_newsDesc {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--baijing_textSub);
+}
+
+.baijing_code {
+  padding: 2px 8px;
+  font-size: 12px;
+  color: var(--baijing_blueLight);
+  border-radius: 6px;
+  background: rgba(0, 132, 255, 0.12);
+}
+
+.baijing_apiBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 12px 16px;
+  border: 1px dashed rgba(74, 168, 255, 0.4);
+  border-radius: 12px;
+  background: rgba(0, 132, 255, 0.06);
+}
+
+.baijing_apiLabel {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--baijing_textSub);
+}
+
+.baijing_apiLink {
+  font-size: 13px;
+  font-family: Consolas, "Courier New", monospace;
+  color: var(--baijing_blueLight);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(74, 168, 255, 0.6);
+}
+
+.baijing_apiLink:hover {
+  color: #9fd0ff;
+}
+
+.baijing_apiCount {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--baijing_textSub);
+}
+
+.baijing_newsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.baijing_newsCard {
+  padding: 22px 24px;
+  border: 1px solid var(--baijing_cardBorder);
+  border-radius: 14px;
+  background: var(--baijing_cardBg);
+  backdrop-filter: blur(10px);
+  transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+  animation: baijing_fadeUp 0.5s ease both;
+}
+
+.baijing_newsCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(74, 168, 255, 0.45);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.32);
+}
+
+.baijing_newsCardTitle {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.baijing_newsCardSummary {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--baijing_textSub);
+}
+
+.baijing_newsCardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--baijing_textSub);
+}
+
+.baijing_metaItem {
+  position: relative;
+  padding-left: 12px;
+}
+
+.baijing_metaItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(74, 168, 255, 0.8);
+  transform: translateY(-50%);
+}
