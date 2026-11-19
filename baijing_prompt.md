@@ -38,3 +38,7 @@
 图文列表里的图片怎么是这样的呢
 
 （处理：网络图片接口仅返回“生成中”占位图，改为本地生成 9 张图片存入 frontend/images，并将数据库图片地址更新为本地路径）
+
+## 2026-11-19 15:00 | 大模型：DeepSeek-V4.1-Flash
+
+创建技能 skill：提交到 GitHub，将本项目提交 commit 并 push 到`https://github.com/HHH-baijing/baijing.git` ，使用已设置公钥。
