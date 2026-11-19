@@ -1,0 +1,315 @@
+/**
+ * 姓名：白静 | 学号：24001010327 | 时间：2026-11-19 | 大模型：DeepSeek-V4.1-Flash
+ * 功能：首页样式（知乎蓝配色 + 玻璃拟态卡片）
+ */
+
+:root {
+  --Cheney_blue: #0084ff;
+  --Cheney_blueLight: #4aa8ff;
+  --Cheney_text: #eaf2fb;
+  --Cheney_textSub: #9db2c8;
+  --Cheney_cardBg: rgba(255, 255, 255, 0.06);
+  --Cheney_cardBorder: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+  color: var(--Cheney_text);
+  background: #070d1a;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(0, 132, 255, 0.22), transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(90, 40, 255, 0.20), transparent 50%),
+    linear-gradient(160deg, #070d1a 0%, #0b1526 55%, #070d1a 100%);
+  overflow-x: hidden;
+}
+
+/* 背景 canvas */
+.Cheney_canvasBg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.Cheney_page {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 顶部栏 */
+.Cheney_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.Cheney_brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.Cheney_brandMark {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--Cheney_blue), #6a5cff);
+  box-shadow: 0 8px 24px rgba(0, 132, 255, 0.35);
+}
+
+.Cheney_brandTitle {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.Cheney_brandSub {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--Cheney_textSub);
+  letter-spacing: 2px;
+}
+
+.Cheney_userCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  padding: 8px 16px;
+  border: 1px solid var(--Cheney_cardBorder);
+  border-radius: 12px;
+  background: var(--Cheney_cardBg);
+  backdrop-filter: blur(8px);
+}
+
+.Cheney_userName {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.Cheney_userId {
+  font-size: 12px;
+  color: var(--Cheney_textSub);
+  letter-spacing: 1px;
+}
+
+/* 主体 */
+.Cheney_main {
+  flex: 1;
+  padding-top: 56px;
+}
+
+.Cheney_hero {
+  margin-bottom: 56px;
+  animation: Cheney_fadeUp 0.8s ease both;
+}
+
+.Cheney_heroTag {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 6px 14px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--Cheney_blueLight);
+  border: 1px solid rgba(74, 168, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(0, 132, 255, 0.10);
+}
+
+.Cheney_heroTitle {
+  font-size: 42px;
+  line-height: 1.3;
+  font-weight: 700;
+  background: linear-gradient(100deg, #ffffff 10%, var(--Cheney_blueLight) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.Cheney_heroDesc {
+  max-width: 620px;
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--Cheney_textSub);
+}
+
+/* 导航区 */
+.Cheney_sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.Cheney_sectionTitle {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.Cheney_sectionLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 132, 255, 0.55), transparent);
+}
+
+.Cheney_navGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.Cheney_navCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px 20px;
+  border: 1px solid var(--Cheney_cardBorder);
+  border-radius: 16px;
+  background: var(--Cheney_cardBg);
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.Cheney_navCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 132, 255, 0.18), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.Cheney_navCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(74, 168, 255, 0.55);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.Cheney_navCard:hover::before {
+  opacity: 1;
+}
+
+.Cheney_navTitle {
+  position: relative;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.Cheney_navDesc {
+  position: relative;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--Cheney_textSub);
+}
+
+.Cheney_navStatus {
+  position: relative;
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 3px 10px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  border-radius: 999px;
+  color: #7ce3a6;
+  border: 1px solid rgba(124, 227, 166, 0.4);
+  background: rgba(124, 227, 166, 0.08);
+}
+
+.Cheney_navCard--disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.Cheney_navCard--disabled:hover {
+  transform: none;
+  border-color: var(--Cheney_cardBorder);
+  box-shadow: none;
+}
+
+.Cheney_navCard--disabled:hover::before {
+  opacity: 0;
+}
+
+.Cheney_navCard--disabled .Cheney_navStatus {
+  color: var(--Cheney_textSub);
+  border-color: rgba(157, 178, 200, 0.35);
+  background: rgba(157, 178, 200, 0.08);
+}
+
+/* 页脚 */
+.Cheney_footer {
+  margin-top: 64px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--Cheney_textSub);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.Cheney_dot {
+  opacity: 0.5;
+}
+
+@keyframes Cheney_fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .Cheney_heroTitle {
+    font-size: 28px;
+  }
+
+  .Cheney_userCard {
+    padding: 6px 12px;
+  }
+
+  .Cheney_main {
+    padding-top: 36px;
+  }
+}
